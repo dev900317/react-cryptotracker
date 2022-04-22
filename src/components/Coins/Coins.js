@@ -1,11 +1,17 @@
-import { nanoid } from '@reduxjs/toolkit';
 import React from 'react';
+import { nanoid } from '@reduxjs/toolkit';
+import { Link } from 'react-router-dom';
 import CoinItem from '../CoinItem/CoinItem';
 import styles from './Coins.module.css';
+import Coin from '../../routes/Coin';
 
 const Coins = ({ coins }) => {
   const renderList = coins.map((coin) => {
-    return <CoinItem key={nanoid()} coin={coin} />;
+    return (
+      <Link to={`/coin/${coin.id}`} element={<Coin />} key={nanoid()}>
+        <CoinItem coin={coin} />
+      </Link>
+    );
   });
 
   return (
