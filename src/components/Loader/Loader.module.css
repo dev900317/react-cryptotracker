@@ -1,0 +1,21 @@
+.content {
+  width: 100%;
+  height: 80vh;
+  display: grid;
+  place-items: center;
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+  animation: infiniteRotate 0.5s linear infinite;
+}
+
+@keyframes infiniteRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
